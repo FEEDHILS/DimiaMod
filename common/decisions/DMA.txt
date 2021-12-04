@@ -1,0 +1,268 @@
+political_actions = {
+#[CONNECT WITH DEALERS]
+	Connect_with_dealers = {
+		cost=50
+
+		visible = {
+			original_tag = DMA
+
+			#Checks for specific flag(And inverse result becuz its "NOT")
+			NOT = {
+				DMA = {
+					has_country_flag = "blackmarket_enable"
+				}
+			}
+
+		}
+
+		available = {
+			has_stability > 0.1
+		}
+
+		complete_effect = {
+			add_stability = -0.05
+		}
+		modifier = {
+			political_power_gain = -0.5
+			stability_weekly_factor = -0.05
+		}
+		remove_effect = {
+			DMA = {
+				set_country_flag = "blackmarket_enable"
+			}
+		}
+
+		fire_only_once = no
+		days_remove = 5
+	}
+
+#[RESOURCE TRANSFER OPERATION]
+	resource_stealing =
+	{
+		cost = 80
+
+		visible = {
+			original_tag = DMA
+			NOT = {
+				DMA = {
+					has_country_flag = "resource_op_enabled"
+				}
+			}
+		}
+
+		available = {
+			network_strength = { target = SOV value > 10 }
+			has_stability > 0.1
+		}
+
+		complete_effect = {
+			add_stability = -0.1
+			political_power_gain = -0.15
+		}
+
+
+		remove_effect = {
+			set_country_flag = "resource_op_enabled" #Resource operations enabled
+
+		}
+
+		fire_only_once = no
+		days_remove = 10
+	}
+}
+
+#[BUYING EQUIPMENT]
+	blackmarket_decisions = {
+
+		#[INFANTRY GUNS]
+			Buy_Rifles = {
+				cost = 50
+				available = {
+					has_stability > 0.2
+				}
+
+				complete_effect = {
+						random_list = {
+							20 = {
+								add_stability = -0.02
+							}
+							80 = {
+								#Nothing
+							}
+						}
+				}
+
+				remove_effect = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 320
+						producer = SOV
+					}
+				}
+				fire_only_once = no
+				days_remove = 5
+				fixed_random_seed = no
+			}
+
+
+		#[SUPPORT EQUIP.]
+			Buy_SupportEquip = {
+				cost = 30
+				available = {
+					has_stability > 0.2
+				}
+
+				complete_effect = {
+						random_list = {
+							20 = {
+								add_stability = -0.02
+							}
+							80 = {
+								#Nothing
+							}
+						}
+				}
+
+				remove_effect = {
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 280
+						producer = SOV
+					}
+				}
+				fire_only_once = no
+				days_remove = 8
+				fixed_random_seed = no
+			}
+
+
+		#[MOTORIZED]
+			Buy_Motorized = {
+				cost = 60
+				available = {
+					has_stability > 0.2
+				}
+
+				complete_effect = {
+						random_list = {
+							20 = {
+								add_stability = -0.02
+							}
+							80 = {
+								#Nothing
+							}
+						}
+				}
+
+				remove_effect = {
+					add_equipment_to_stockpile = {
+						type = motorized_equipment
+						amount = 260
+						producer = SOV
+					}
+				}
+				fire_only_once = no
+				days_remove = 21
+				fixed_random_seed = no
+			}
+
+
+		#[L. TANKS]
+			Buy_Tanks = {
+				cost = 70
+				available = {
+					has_stability > 0.2
+				}
+
+				complete_effect = {
+						random_list = {
+							20 = {
+								add_stability = -0.02
+							}
+							80 = {
+								#Nothing
+							}
+						}
+				}
+
+				remove_effect = {
+					add_equipment_to_stockpile = {
+						type = gw_tank_equipment
+						amount = 180
+						producer = SOV
+					}
+				}
+				fire_only_once = no
+				days_remove = 30
+				fixed_random_seed = no
+			}
+
+
+		#[ARTILLERY]
+			Buy_Artillery = {
+				cost = 50
+				available = {
+					has_stability > 0.2
+				}
+
+				complete_effect = {
+						random_list = {
+							20 = {
+								add_stability = -0.02
+							}
+							80 = {
+								#Nothing
+							}
+						}
+				}
+
+				remove_effect = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment
+						amount = 220
+						producer = SOV
+					}
+				}
+				fire_only_once = no
+				days_remove = 18
+				fixed_random_seed = no
+			}
+
+
+		#[PLANES]
+			Buy_Planes = {
+				cost = 75
+				available = {
+					has_stability > 0.2
+				}
+
+				complete_effect = {
+						random_list = {
+							30 = {
+								add_stability = -0.02
+							}
+							80 = {
+								#Nothing
+							}
+						}
+				}
+
+				remove_effect = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment
+						amount = 64
+						producer = SOV
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment
+						amount = 48
+						producer = SOV
+					}
+				}
+
+				fire_only_once = no
+				days_remove = 30
+				fixed_random_seed = no
+			}
+
+	}

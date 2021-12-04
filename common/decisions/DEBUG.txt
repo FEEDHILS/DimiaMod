@@ -1,0 +1,24 @@
+debug_decisions = {
+	turn_off_blackmarket = {
+		remove_effect = {
+			DMA = {
+				clr_country_flag = "blackmarket_enable"
+			}
+		}
+
+		fire_only_once = no
+	}
+
+	checks_variables = {
+		complete_effect = {
+			DMA = {
+				every_operative = {
+					print_variables = { file = Operatives_variables_1 text = header_text append = yes print_global = yes }
+				}
+			}
+
+		}
+
+	}
+
+}

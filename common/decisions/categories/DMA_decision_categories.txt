@@ -1,0 +1,12 @@
+blackmarket_decisions = {
+	icon = GFX_decision_category_generic_economy
+
+	visible = {
+		AND = {
+			original_tag = DMA
+			DMA = {
+				has_country_flag = "blackmarket_enable"
+			}
+		}
+	}
+}

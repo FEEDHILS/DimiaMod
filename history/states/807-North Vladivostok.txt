@@ -1,0 +1,31 @@
+state = {
+	id=807
+	name="STATE_807"
+	resources={
+		steel = 22
+		chromium = 8
+		aluminium = 6
+	}
+
+	history={
+		owner = DMA
+
+		buildings = {
+			infrastructure = 4
+			air_base = 5
+			industrial_complex = 2
+			arms_factory = 3
+		}
+
+
+		add_core_of = SOV
+		add_core_of = DMA
+	}
+
+	provinces={
+		664 681 837 3695 3723 3739 3753 6686 6715 6833 9639 9641 11624 11626 11629 11643 11765 11777
+	}
+	manpower=42054
+	state_category = large_town
+	buildings_max_level_factor=1.000
+}
